@@ -3,12 +3,21 @@
       {
         "src": "chatapp/wsgi.py",
         "use": "@vercel/python"
+      },
+      {
+        "src": "chatapp/asgi.py",
+        "use": "@vercel/python"
       }
     ],
     "routes": [
       {
-        "src": "/(.*)",
+        "src": "/wsgi/(.*)",
         "dest": "chatapp/wsgi.py"
+      },
+      {
+        "src": "/asgi/(.*)",
+        "dest": "chatapp/asgi.py"
       }
     ]
-}
+  }
+  
